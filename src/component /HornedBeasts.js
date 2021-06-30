@@ -11,19 +11,24 @@ class HornedBeasts extends React.Component {
             numberOfPets: 0
         }
     }
-
+// findItem=()=>{
+//     this.props.findItem(this.props.title)
+//     console.log((this.props.title)+'hornpe')
+// }
     increaseNoOfPets = () => {
         this.setState({
             numberOfPets: this.state.numberOfPets + 1
         })
-
     }
-    
+    findFunc=()=>{
+        this.props.findFunc(this.props.title)
+    }
+
     render() {
         return (
             <>
-                <Card onClick={this.props.findItem} style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={this.props.image_url} />
+                <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={this.props.image_url}  onClick={this.findFunc} />
                     <Card.Body>
                         <Card.Title>{this.props.title}</Card.Title>
                         <Card.Text>

@@ -18,16 +18,21 @@ dataArray:HornedB,
 
   }
   findItem = (title) => {
-    let hornedObj =this.state.dataArray.find(element => element.title === title)
-
+    const Obj =HornedB.find(element => {
+      if(element.title === title)
+      {return element}
+    })
     this.setState({
       showPea: true,
-      hornedObj:hornedObj
+      hornedObj:Obj
+      
+           
 
 
 
     })
-    // {console.log(result)}
+    
+     {console.log(this.state.hornedObj)}
   }
   endShow = () => {
     this.setState({

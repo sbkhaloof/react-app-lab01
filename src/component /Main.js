@@ -4,10 +4,7 @@ import HornedB from './HornedB.json';
 import SelectedBeast from './SelectedBeast';
 class Main extends React.Component
  {
-    findItem=()=>{
-        this.props.findItem()
-        
-    }
+  
    
         render() {
             return (
@@ -18,7 +15,7 @@ class Main extends React.Component
                     return(
                     <HornedBeasts 
                     key={index} title={item.title} description={item.description}
-                     image_url={item.image_url} findFunc={this.findItem} />)
+                     image_url={item.image_url} findFunc={this.props.findItem} />)
                     })}
                     { console.log(this.props.dataArray)}
                 </div>

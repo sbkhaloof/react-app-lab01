@@ -27,8 +27,8 @@ class HornedBeasts extends React.Component {
     render() {
         return (
             <>
-                <Card onClick={this.findFunc} style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={this.props.image_url} />
+                <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={this.props.image_url}  onClick={this.findFunc} />
                     <Card.Body>
                         <Card.Title>{this.props.title}</Card.Title>
                         <Card.Text>

@@ -25,11 +25,7 @@ dataArray:HornedB,
     this.setState({
       showPea: true,
       hornedObj:Obj
-      
-           
-
-
-
+    
     })
     
      {console.log(this.state.hornedObj)}

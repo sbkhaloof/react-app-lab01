@@ -10,7 +10,6 @@ class SelectedBeast extends React.Component {
 render() {
     return (
         <>
-        {console.log(this.props.findhorn)}
           <Modal show={this.props.show} onHide={this.props.endShow}>
         <Modal.Header closeButton>
           <Modal.Title>{this.props.findhorn.title}</Modal.Title>

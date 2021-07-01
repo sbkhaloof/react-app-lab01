@@ -1,6 +1,9 @@
 import React from 'react';
 import HornedBeasts from './HornedBeasts';
-import FilterForm from './FilterForm.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import FilterForm from './FilterForm.js';
+import  Form from 'react-bootstrap/Form'
+
 import HornedB from './HornedB.json'
 class Main extends React.Component {
     constructor(props) {
@@ -10,24 +13,31 @@ class Main extends React.Component {
         }
     }
     submitForm = (event) => {
-        event.preventDefault();
-        let yourHorned ;
-        if (Number(event.target.value)!==0){
-            yourHorned=HornedB.flter(value =>{return value.horns===Number(event.target.value)})
+        
+        let yourHorned =parseInt(event.target.value);
+        let filteredAnimal=HornedB;
+        if (yourHorned){
+            filteredAnimal=HornedB.filter(value => value.horns===yourHorned)
         }
-else     { yourHorned=HornedB }
-this.setState({
-    newHorned:yourHorned
-})  
+this.props.displayFiltered(filteredAnimal);
 
-    }
+    };
 
 
     render() {
         return (
             <div className="main">
-                <FilterForm onSubmit={this.submitForm} />
-
+                <Form>
+                    <Form.Label>Filter By Number OF Horns</Form.Label>
+                    <Form.Control as='select' onChange={this.submitForm} >
+                        <option value="0" >ALL</option>
+                        <option value="1">one</option>
+                        <option value="2">two</option>
+                        <option value="3">three</option>
+                        <option value="100">Wow...</option>
+                    </Form.Control>
+                   
+                </Form>
                 {this.props.dataArray.map((item, index) => {
                     // return (<HornedBeasts findItem={this.findItem} title={item.title} description={item.description}
                     //     image_url={item.image_url} key={index} index={index} />)

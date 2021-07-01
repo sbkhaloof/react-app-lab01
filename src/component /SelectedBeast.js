@@ -15,7 +15,7 @@ render() {
           <Modal.Title>{this.props.findhorn.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>{this.props.findhorn.description}
-        <img src={this.props.findhorn.image_url} width="200"/></Modal.Body>
+        <img src={this.props.findhorn.image_url} alt={this.props.findhorn.title} width="200"/></Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={this.props.endShow}>
             Close

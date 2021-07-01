@@ -18,10 +18,7 @@ dataArray:HornedB,
 
   }
   findItem = (title) => {
-    const Obj =HornedB.find(element => {
-      if(element.title === title)
-      {return element}
-    })
+    let Obj =HornedB.find(element => element.title === title);
     this.setState({
       showPea: true,
       hornedObj:Obj
@@ -37,6 +34,13 @@ dataArray:HornedB,
     })
   }
 
+updateAnimalArray =(dataArray)=>{
+  this.setState({
+    dataArray
+  });
+}
+
+
   render() {
     return (
       <div>
@@ -44,7 +48,7 @@ dataArray:HornedB,
           welcome to first react
         </h1>
         <Header />
-        <Main findItem={this.findItem} dataArray={this.state.dataArray}/>
+        <Main findItem={this.findItem} dataArray={this.state.dataArray} displayFiltered={this.updateAnimalArray}/>
         <SelectedBeast show={this.state.showPea}  findhorn={this.state.hornedObj} endShow={this.endShow} />
 
         <Footer />

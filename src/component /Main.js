@@ -10,14 +10,15 @@ class Main extends React.Component {
         }
     }
     submitForm = (event) => {
-        let selectedHorned = event.target.yourHorned.value;
-        let yourHorned = [];
-        yourHorned = HornedB.filter((horned) => {
-            if (horned.horns == selectedHorned) { return true; }
-        })
-        this.setState({
-            newHorned: yourHorned
-        })
+        event.preventDefault();
+        let yourHorned ;
+        if (Number(event.target.value)!==0){
+            yourHorned=HornedB.flter(value =>{return value.horns===Number(event.target.value)})
+        }
+else     { yourHorned=HornedB }
+this.setState({
+    newHorned:yourHorned
+})  
 
     }
 

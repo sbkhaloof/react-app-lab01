@@ -20,9 +20,7 @@ render() {
           <Button variant="secondary" onClick={this.props.endShow}>
             Close
           </Button>
-          <Button variant="primary" onClick={this.props.endShow}>
-            Save Changes
-          </Button>
+         
         </Modal.Footer>
       </Modal>
         </>
